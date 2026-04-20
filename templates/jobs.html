@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fake Python Jobs</title>
+    <style>
+        :root {
+            --background: #f6f1e8;
+            --text: #1f2933;
+            --muted: #667085;
+            --surface: #fffaf0;
+            --border: #d8c7aa;
+            --accent: #b45309;
+            --accent-dark: #78350f;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(circle at top left, rgba(251, 191, 36, 0.25), transparent 28rem),
+                linear-gradient(135deg, #fdf6e3 0%, var(--background) 100%);
+            color: var(--text);
+            font-family: Georgia, "Times New Roman", serif;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            margin: 0 0 0.5rem;
+            color: var(--accent-dark);
+            font-size: clamp(2rem, 5vw, 4rem);
+            letter-spacing: -0.05em;
+        }
+
+        p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            background: rgba(255, 250, 240, 0.86);
+            border: 1px solid var(--border);
+            border-radius: 1.25rem;
+            box-shadow: 0 1.5rem 4rem rgba(120, 53, 15, 0.12);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 840px;
+        }
+
+        th,
+        td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        th {
+            background: #eadcc4;
+            color: var(--accent-dark);
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        tr:last-child td {
+            border-bottom: 0;
+        }
+
+        tr:hover td {
+            background: #fff4dc;
+        }
+
+        a {
+            color: var(--accent);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--accent-dark);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 1rem;
+            }
+
+            th,
+            td {
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header class="page-header">
+            <h1>Fake Python Jobs</h1>
+            <p>Showing {{ jobs|length }} scraped job listings from Real Python's practice website.</p>
+        </header>
+
+        <section class="table-wrap" aria-label="Scraped job listings">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Job Title</th>
+                        <th>Company</th>
+                        <th>Location</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for job in jobs %}
+                    <tr>
+                        <td>{{ job.job_title }}</td>
+                        <td>{{ job.company_name }}</td>
+                        <td>{{ job.location }}</td>
+                        <td>
+                            {% if job.detail_url != "N/A" %}
+                            <a href="{{ job.detail_url }}" target="_blank" rel="noreferrer">Open job</a>
+                            {% else %}
+                            N/A
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
