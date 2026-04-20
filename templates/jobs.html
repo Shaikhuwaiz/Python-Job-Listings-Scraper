@@ -6,13 +6,16 @@
     <title>Fake Python Jobs</title>
     <style>
         :root {
-            --background: #f6f1e8;
-            --text: #1f2933;
-            --muted: #667085;
-            --surface: #fffaf0;
-            --border: #d8c7aa;
-            --accent: #b45309;
-            --accent-dark: #78350f;
+            --background: #e0f2fe;
+            --text: #0f172a;
+            --muted: #475569;
+            --surface: #f8fafc;
+            --border: #bae6fd;
+            --accent: #0891b2;
+            --accent-dark: #155e75;
+            --header: #164e63;
+            --header-text: #ecfeff;
+            --row-hover: #cffafe;
         }
 
         * {
@@ -22,8 +25,9 @@
         body {
             margin: 0;
             background:
-                radial-gradient(circle at top left, rgba(251, 191, 36, 0.25), transparent 28rem),
-                linear-gradient(135deg, #fdf6e3 0%, var(--background) 100%);
+                radial-gradient(circle at top left, rgba(6, 182, 212, 0.32), transparent 28rem),
+                radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.24), transparent 26rem),
+                linear-gradient(135deg, #f0f9ff 0%, var(--background) 100%);
             color: var(--text);
             font-family: Georgia, "Times New Roman", serif;
             min-height: 100vh;
@@ -54,10 +58,10 @@
 
         .table-wrap {
             overflow-x: auto;
-            background: rgba(255, 250, 240, 0.86);
+            background: rgba(248, 250, 252, 0.92);
             border: 1px solid var(--border);
             border-radius: 1.25rem;
-            box-shadow: 0 1.5rem 4rem rgba(120, 53, 15, 0.12);
+            box-shadow: 0 1.5rem 4rem rgba(8, 47, 73, 0.16);
         }
 
         table {
@@ -75,8 +79,8 @@
         }
 
         th {
-            background: #eadcc4;
-            color: var(--accent-dark);
+            background: var(--header);
+            color: var(--header-text);
             font-size: 0.82rem;
             letter-spacing: 0.08em;
             text-transform: uppercase;
@@ -87,7 +91,7 @@
         }
 
         tr:hover td {
-            background: #fff4dc;
+            background: var(--row-hover);
         }
 
         a {
