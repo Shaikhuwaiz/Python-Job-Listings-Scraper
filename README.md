@@ -4,6 +4,14 @@ A beginner-friendly Python web scraper that collects job listings from the
 [Fake Python Jobs](https://realpython.github.io/fake-jobs/) website and stores
 the results in a CSV file.
 
+## Live Demo
+
+View the deployed project here:
+
+```text
+https://python-job-listings-scraper.vercel.app/
+```
+
 ## What It Scrapes
 
 For each job posting, the scraper extracts:
@@ -12,6 +20,14 @@ For each job posting, the scraper extracts:
 - Company name
 - Location
 - Job detail page URL
+
+## Technologies Used
+
+- Python
+- Requests
+- Beautiful Soup
+- CSV module
+- Flask
 
 ## Setup
 
@@ -28,9 +44,9 @@ Install the dependencies:
 pip install -r requirements.txt
 ```
 
-## Usage
+## Run The Scraper
 
-Run the scraper:
+Run the scraper from the terminal:
 
 ```powershell
 python scraper.py
@@ -73,10 +89,11 @@ job_title,company_name,location,detail_url
 
 ```text
 .
-├── app.py
-├── README.md
-├── requirements.txt
-├── scraper.py
-└── templates/
-    └── jobs.html
+|-- app.py
+|-- jobs.csv
+|-- README.md
+|-- requirements.txt
+|-- scraper.py
+`-- templates/
+    `-- jobs.html
 ```
