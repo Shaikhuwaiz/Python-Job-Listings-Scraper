@@ -4,6 +4,14 @@ A beginner-friendly Python web scraper that collects job listings from the
 [Fake Python Jobs](https://realpython.github.io/fake-jobs/) website and stores
 the results in a CSV file.
 
+## Project URL
+
+This project is based on the roadmap.sh project:
+
+```text
+https://roadmap.sh/projects/job-listings-scraper
+```
+
 ## Live Demo
 
 View the deployed project here:
