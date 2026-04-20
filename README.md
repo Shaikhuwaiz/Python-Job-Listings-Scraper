@@ -74,7 +74,7 @@ python app.py
 Then open this URL in your browser:
 
 ```text
-https://python-job-listings-scraper.vercel.app/
+http://127.0.0.1:5000/
 ```
 
 ## Output Format
